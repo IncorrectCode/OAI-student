@@ -55,18 +55,27 @@ def binary_search(lst, target):
     Returns:
         bool: Of het gezochte element voorkomt in de lijst.
     """
-    # Stap 1.
-    mini = 0
+    
+mini = 0
+maxi = len(lst) - 1
 
-    # Stap 6. (!)
-    while False:    # hoelang ga je door met zoeken?
-        # Stap 2.
-        # Stap 3.
-        return True
-        # Stap 4.
-        # Stap 5.
+while mini <= maxi:
+    index = (mini + maxi) // 2
+    element = lst[index]
 
-    return False
+    if element == target:
+        # Het doelelement is gevonden
+        print(f"Doel {target} gevonden op positie {index}.")
+        break
+    elif element < target:
+        # Het doelelement bevindt zich in de rechterhelft
+        mini = index + 1
+    else:
+        # Het doelelement bevindt zich in de linkerhelft
+        maxi = index - 1
+else:
+    # Het doelelement is niet gevonden
+    print(f"Doel {target} niet gevonden in de lijst.")
 
 
 def binary_search_index(lst, target):
